@@ -54,7 +54,7 @@ export function Layout({
           repeat: Infinity,
           ease: 'easeInOut'
         }} className="flex items-center gap-1.5 justify-center">
-           <span className='flex items-center space-x-2'><Clock className="" /> <span>Open 24/7</span></span> 
+           <span className='flex items-center space-x-2'><Clock  /> <span>Open 24/7</span></span> 
           </motion.div>
         </div>
       </motion.div>

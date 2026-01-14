@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, Beaker, Heart, Stethoscope, Pill, Sparkles } from 'lucide-react';
+import { ArrowRight, Activity, Beaker, Heart, Stethoscope, Pill, Sparkles, HeartPulse } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 export function HomePage() {
   useScroll();
   return <div className="bg-white/80 backdrop-blur-lg">
       {/* Hero Section*/}
-      <section className="relative py-24 sm:py-32 overflow-hidden">
+      <section className="relative py-20 sm:py-30 overflow-hidden">
         {/*  Background */}
           <img src="reception.jpg"  className="absolute inset-0 w-full h-full object-cover z-0"/>
 
@@ -28,7 +28,7 @@ export function HomePage() {
           delay: i * 2,
           ease: 'linear'
         }}>
-            <Heart className="w-3 h-3 text-white" />
+            <HeartPulse className="w-5 h-5 animate-pulse text-red-800" />
           </motion.div>)}
         </div>
 
@@ -227,53 +227,6 @@ export function HomePage() {
                 technology and staffed by experienced healthcare professionals
                 dedicated to your well-being.
               </p>
-              <div className="flex items-center gap-8 text-sm text-[#666]">
-                {[{
-                value: '15+',
-                label: 'Years of Service',
-                delay: 0
-              }, {
-                value: '5',
-                label: 'Departments',
-                delay: 0.1
-              }, {
-                value: '20+',
-                label: 'Medical Staff',
-                delay: 0.2
-              }].map((stat, i) => <motion.div key={i} initial={{
-                opacity: 0,
-                y: 20
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.5,
-                delay: 0.4 + stat.delay
-              }} className="text-center backdrop-blur-sm bg-[#B62028]/5 p-4 rounded-lg border border-[#B62028]/10 relative overflow-hidden">
-                    <motion.div className="absolute inset-0 bg-gradient-to-br from-[#B62028]/10 to-transparent" animate={{
-                  opacity: [0, 0.5, 0]
-                }} transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: i * 0.5
-                }} />
-                    <motion.div initial={{
-                  scale: 0
-                }} animate={{
-                  scale: 1
-                }} transition={{
-                  duration: 0.5,
-                  delay: 0.6 + stat.delay,
-                  type: 'spring'
-                }} className="text-3xl font-serif font-bold text-[#B62028] relative z-10">
-                      {stat.value}
-                    </motion.div>
-                    <div className="text-xs uppercase tracking-wide mt-1 relative z-10">
-                      {stat.label}
-                    </div>
-                  </motion.div>)}
-              </div>
             </motion.div>
             <motion.div initial={{
             opacity: 0,
