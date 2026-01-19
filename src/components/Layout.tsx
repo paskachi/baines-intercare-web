@@ -215,7 +215,7 @@ export function Layout({
               <ul className="space-y-3 text-sm text-[#a0a0a0]">
                 <li>
                   <Link to="/facilities" className="hover:text-[#B62028] transition-colors">
-                    Our Services
+                    Our Facilities
                   </Link>
                 </li>
                 <li>
