@@ -83,8 +83,8 @@ export function Layout({
               name: 'Home',
               path: '/'
             }, {
-              name: 'Services',
-              path: '/services'
+              name: 'Facilities',
+              path: '/facilities'
             }, {
               name: 'Contact',
               path: '/contact'
@@ -123,8 +123,8 @@ export function Layout({
             name: 'Home',
             path: '/'
           }, {
-            name: 'Services',
-            path: '/services'
+            name: 'Facilities',
+            path: '/facilities'
           }, {
             name: 'Contact',
             path: '/contact'

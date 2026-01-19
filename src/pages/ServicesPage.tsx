@@ -1,252 +1,182 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Pill, Beaker, Activity, Stethoscope, Heart } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 export function ServicesPage() {
-  return <div className="bg-white/80 backdrop-blur-lg min-h-screen pb-20">
-      {/*  Header  */}
-      <motion.div initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      duration: 0.5,
-      ease: 'easeOut'
-    }} className="relative py-24 overflow-hidden">
-    
+  return (
+    <div className="bg-white/80 backdrop-blur-lg min-h-screen pb-20">
+      {/* Header */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="relative py-24 overflow-hidden"
+      >
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img src="/bi.jpg" alt="Medical Services Background" className="w-full h-full object-cover" />
+          <img
+            src="/bi.jpg"
+            alt="Medical services background"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
         </div>
 
-        {/*  Overlay */}
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10"></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
 
-        {/* Pattern*/}
-        <div className="absolute inset-0 z-10 opacity-5">
-          <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }}></div>
-        </div>
-
-        {/* Content  */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.95
-        }} animate={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.5,
-          delay: 0.1,
-          ease: 'easeOut'
-        }} className="backdrop-blur-md bg-white/30 border border-white/30 rounded-lg p-10 shadow-2xl">
-            <div className="inline-block px-4 py-1 bg-black/10 text-white text-xs font-bold uppercase tracking-wider rounded-full mb-6 backdrop-blur-sm border border-white/30">
-              Comprehensive Healthcare
-            </div>
-            <motion.h1 initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.2,
-            ease: 'easeOut'
-          }} className="text-4xl sm:text-5xl font-serif font-bold text-[#B62028] mb-4">
-              Our Services
-            </motion.h1>
-            <motion.div initial={{
-            scaleX: 0
-          }} animate={{
-            scaleX: 1
-          }} transition={{
-            duration: 0.5,
-            delay: 0.3,
-            ease: 'easeOut'
-          }} className="w-16 h-1 bg-[#B62028] mx-auto mb-6"></motion.div>
-            <motion.p initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.4,
-            ease: 'easeOut'
-          }} className="text-[#010101] max-w-2xl mx-auto text-gray-800 text-lg">
-              Comprehensive medical care delivered by experienced professionals
-              in a state-of-the-art facility.
-            </motion.p>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Services  */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16">
-        {/* Medicine Shoppe  */}
-        <ServiceSection icon={<Pill className="w-8 h-8" />} title="Medicine Shoppe (On-Site Pharmacy)" image="/medicine-shoppe.jpg" delay={0.1}>
-          <p className="mb-4">
-            Our on-site pharmacy offers a wide range of medications and health
-            products. We strive to provide prompt service, ensuring that you
-            have access to the medications you need.
-          </p>
-          <p>
-            Our licensed pharmacists are available to answer your questions,
-            discuss medication management, and help you with any health
-            concerns.
-          </p>
-        </ServiceSection>
-
-        {/* Pathology Laboratory Section */}
-        <ServiceSection icon={<Beaker className="w-8 h-8" />} title="Pathology Laboratory" image="/pathology-lab.jpg" delay={0.2}>
-          <p className="mb-4">
-            The laboratory at Baines Intercare Medical Centre is equipped with
-            the latest technology to provide accurate and timely diagnostic
-            tests. Our skilled laboratory technicians carry out a variety of
-            tests, from routine blood work to specialized screenings.
-          </p>
-          <p>
-            We emphasize efficient service and confidentiality, ensuring that
-            your results are ready quickly and securely.
-          </p>
-        </ServiceSection>
-
-        {/* Physiotherapy Section */}
-        <ServiceSection icon={<Activity className="w-8 h-8" />} title="Physiotherapy" image="/physio.jpg" delay={0.3}>
-          <p className="mb-4">
-            Our physiotherapy department is committed to helping patients regain
-            mobility and improve their quality of life. With a team of
-            experienced physiotherapists, we offer personalized treatment plans
-            tailored to individual needs.
-          </p>
-          <p>
-            Whether recovering from an injury, managing chronic pain, or
-            improving your physical function, we are here to support your
-            journey to wellness.
-          </p>
-        </ServiceSection>
-
-        {/* GP Clinic Section */}
-        <ServiceSection icon={<Stethoscope className="w-8 h-8" />} title="GP Clinic" image="/gp-clinic.jpg" delay={0.4}>
-          <p className="mb-4">
-            In our GP Clinic, we provide primary healthcare services for
-            individuals and families. Our general practitioners are here to
-            diagnose and treat a wide variety of health conditions, conduct
-            routine check-ups, and provide ongoing care.
-          </p>
-          <p>
-            We focus on preventive care and patient education to help you
-            maintain your health and wellness.
-          </p>
-        </ServiceSection>
-
-        {/* Wellness Clinic Section */}
-        <ServiceSection icon={<Heart className="w-8 h-8" />} title="Wellness Clinic" image="/wellness-clinic.jpg" delay={0.5}>
-          <p className="mb-4">
-            The Wellness Clinic at Baines Intercare Medical Centre is dedicated
-            to promoting holistic health and well-being. We offer various
-            services, including nutritional counselling, mental health support,
-            and lifestyle coaching.
-          </p>
-          <p>
-            Our team works with you to create a personalized wellness plan to
-            achieve your health goals.
-          </p>
-        </ServiceSection>
-
-        {/* calltp action contact us */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5,
-        delay: 0.6,
-        ease: 'easeOut'
-      }} className="mt-20 bg-gradient-to-br from-[#B62028] to-[#961a21] p-12 rounded-sm text-center text-white relative overflow-hidden shadow-xl">
-          <div className="absolute inset-0 backdrop-blur-sm bg-white/5"></div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-          <div className="relative z-10">
-            <h3 className="font-serif text-3xl font-bold mb-4">
-              Ready to schedule a visit?
-            </h3>
-            <div className="w-16 h-1 bg-white mx-auto mb-6"></div>
-            <p className="text-white/90 mb-8 max-w-lg mx-auto text-lg">
-              Our team is ready to assist you with your healthcare needs. Book
-              an appointment online or contact us for more information.
-            </p>
-            <div className="flex justify-center">
-              <motion.div whileHover={{
-              scale: 1.05
-            }} whileTap={{
-              scale: 0.95
-            }}>
-                <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-base font-bold rounded-sm text-white bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm">
-                  Contact Us
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </div>;
-}
-function ServiceSection({
-  title,
-  children,
-  delay,
-  image
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-  delay: number;
-  image: string;
-}) {
-  return <motion.div initial={{
-    opacity: 0,
-    y: 30
-  }} whileInView={{
-    opacity: 1,
-    y: 0
-  }} viewport={{
-    once: true,
-    margin: '-50px'
-  }} transition={{
-    duration: 0.5,
-    delay,
-    ease: 'easeOut'
-  }} className="mb-16 last:mb-0 pb-16 border-b-2 border-[#B62028]/10 last:border-b-0">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        {/* Image  */}
-        <motion.div whileHover={{
-        scale: 1.03
-      }} transition={{
-        duration: 0.3
-      }} className="lg:col-span-1">
-          <div className="aspect-square bg-[#e8e8e8] rounded-sm overflow-hidden border-2 border-[#B62028]/20 shadow-md backdrop-blur-sm">
-            <img src={image} alt={`${title} Department`} className="w-full h-full object-cover" />
-          </div>
-        </motion.div>
+        {/* Pattern Overlay */}
+        <div className="absolute inset-0 z-10 opacity-5 bg-[radial-gradient(circle,white_1px,transparent_1px)] bg-[length:40px_40px]" />
 
         {/* Content */}
-        <div className="lg:col-span-2">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#010101] mb-2">
-            {title}
-          </h3>
-          <div className="w-12 h-1 bg-[#B62028] mb-6"></div>
-          <div className="text-[#444] leading-relaxed text-base">
-            {children}
-          </div>
+        <div className="relative z-20 max-w-4xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-white/60 backdrop-blur-md border border-white/30 rounded-xl p-10 shadow-2xl"
+          >
+            <span className="inline-block px-4 py-1 bg-black/10 text-white text-xs font-bold uppercase tracking-wider mb-6">
+              Comprehensive Healthcare
+            </span>
+
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[#B62028] mb-4">
+              Our Facilities
+            </h1>
+
+            <div className="w-16 h-1 bg-[#B62028] mx-auto mb-6" />
+
+            <p className="text-gray-800 max-w-2xl mx-auto text-lg">
+              Discover the wide range of facilities offered at Baines Intercare Medical Centre, designed for your well-being.
+            </p>
+          </motion.div>
         </div>
+      </motion.section>
+
+      {/* Services Grid */}
+      <main className="max-w-6xl mx-auto px-4 pt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Medicine Shoppe (On-Site Pharmacy)",
+            image: "/medicine-shoppe.jpg",
+            delay: 0.1,
+            description:
+              "Our on-site pharmacy offers a wide range of medications and health products. Licensed pharmacists are available to provide guidance, medication management, and professional advice.",
+          },
+          {
+            title: "Pathology Laboratory",
+            image: "/pathology-lab.jpg",
+            delay: 0.2,
+            description:
+              "Equipped with modern diagnostic technology, our pathology laboratory delivers accurate and timely test results while maintaining strict confidentiality.",
+          },
+          {
+            title: "Physiotherapy",
+            image: "/physio.jpg",
+            delay: 0.3,
+            description:
+              "Our physiotherapy services focus on restoring mobility, managing pain, and improving physical function through personalised treatment plans.",
+          },
+          {
+            title: "GP Clinic",
+            image: "/gp-clinic.jpg",
+            delay: 0.4,
+            description:
+              "Comprehensive primary healthcare services including diagnosis, treatment, routine check-ups, and preventive medical care for individuals and families.",
+          },
+          {
+            title: "Wellness Clinic",
+            image: "/wellness-clinic.jpg",
+            delay: 0.5,
+            description:
+              "A holistic approach to health offering nutritional counselling, mental health support, and lifestyle coaching tailored to your goals.",
+          },
+          {
+            title: "VIP Lounge",
+            image: "/vip.jpeg",
+            delay: 0.6,
+            description:
+              "Experience comfort and exclusivity in the VIP Lounge at Baines Intercare. With comfortable seating, private spaces, complimentary refreshments, Wi-Fi, and a dedicated concierge, it’s the perfect place to relax while we take care of your needs.",
+          },
+          {
+            title: "Paediatric Department",
+            image: "/paed.jpeg",
+            delay: 0.7,
+            description:
+              "At Baines Intercare, we prioritize children’s health through our Paediatric Department, offering routine check-ups, vaccinations, care for common childhood illnesses, developmental assessments, and nutritional guidance. Our compassionate, family-centred approach ensures that every child receives care tailored to their unique needs.",
+          },
+          {
+            title: "Coffee Shop",
+            image: "/coffee-shop.jpeg",
+            delay: 0.8,
+            description:
+              "Visit our in-house Coffee Shop for a delightful selection of beverages and snacks. Whether it’s a refreshing smoothie, a warm coffee, or a light bite, it’s the perfect spot to relax and recharge before or after your visit.",
+          },
+        ].map((service, index) => (
+          <ServiceGridItem key={index} {...service} />
+        ))}
+
+        {/* CTA Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.9 }}
+          className="md:col-span-2 lg:col-span-3 mt-20 bg-gradient-to-br from-[#B62028] to-[#961a21] p-12 text-center text-white rounded-xl shadow-xl"
+        >
+          <h2 className="font-serif text-3xl font-bold mb-4">
+            Ready to schedule a visit?
+          </h2>
+          <div className="w-16 h-1 bg-white mx-auto mb-6" />
+          <p className="text-white/90 mb-8 max-w-lg mx-auto text-lg">
+            Book an appointment online or contact us for more information.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-8 py-3 border-2 border-white font-bold rounded-sm bg-white/10 hover:bg-white/20 transition-all duration-300"
+          >
+            Contact Us
+          </Link>
+        </motion.section>
+      </main>
+    </div>
+  );
+}
+
+/* ---------------------------------- */
+/* Service Card Component             */
+/* ---------------------------------- */
+
+interface ServiceGridItemProps {
+  title: string;
+  description: string;
+  delay: number;
+  image: string;
+}
+
+function ServiceGridItem({ title, description, delay, image }: ServiceGridItemProps) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      className="relative aspect-video sm:aspect-square rounded-[2px] overflow-hidden shadow-lg border border-white/20"
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${image})` }}
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70 transition duration-300 hover:bg-black/60" />
+
+      {/* Content */}
+      <div className="relative p-6 flex flex-col justify-end h-full text-white">
+        <h3 className="font-serif text-xl sm:text-2xl font-bold mb-3">{title}</h3>
+        <p className="text-sm sm:text-base leading-relaxed text-white/90">{description}</p>
       </div>
-    </motion.div>;
+    </motion.article>
+  );
 }
