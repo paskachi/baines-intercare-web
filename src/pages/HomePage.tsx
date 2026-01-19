@@ -552,7 +552,7 @@ function ServiceCard({
       <p className="text-[#666] text-sm leading-relaxed mb-4 relative z-10">
         {description}
       </p>
-      <Link to="/services" className="text-[#B62028] text-sm font-bold hover:underline decoration-[#B62028] underline-offset-4 inline-flex items-center group relative z-10">
+      <Link to="/facilities" className="text-[#B62028] text-sm font-bold hover:underline decoration-[#B62028] underline-offset-4 inline-flex items-center group relative z-10">
         Learn more
         <ArrowRight className="w-3 h-3 ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
       </Link>
