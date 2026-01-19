@@ -143,9 +143,6 @@ export function ServicesPage() {
   );
 }
 
-/* ---------------------------------- */
-/* Service Card Component             */
-/* ---------------------------------- */
 
 interface ServiceGridItemProps {
   title: string;
@@ -161,22 +158,23 @@ function ServiceGridItem({ title, description, delay, image }: ServiceGridItemPr
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="relative aspect-video sm:aspect-square rounded-[2px] overflow-hidden shadow-lg border border-white/20"
+      className="relative rounded-[2px] overflow-hidden shadow-lg border border-white/20 flex flex-col"
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: `url(${image})` }}
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70 transition duration-300 hover:bg-black/60" />
+      <div className="absolute inset-0 bg-black/70 transition duration-300 hover:bg-black/60 z-10" />
 
       {/* Content */}
-      <div className="relative p-6 flex flex-col justify-end h-full text-white">
+      <div className="relative z-20 p-6 flex flex-col flex-1 text-white">
         <h3 className="font-serif text-xl sm:text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-sm sm:text-base leading-relaxed text-white/90">{description}</p>
+        <p className="text-sm sm:text-base leading-relaxed text-white/90 flex-1">{description}</p>
       </div>
     </motion.article>
   );
 }
+

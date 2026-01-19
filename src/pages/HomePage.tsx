@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, Beaker, Heart, Stethoscope, Pill, Sparkles, HeartPulse } from 'lucide-react';
+import { ArrowRight, Activity, Beaker, Heart, Stethoscope, Pill, Sparkles, HeartPulse, PersonStanding, HandPlatter, Coffee } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 export function HomePage() {
   useScroll();
@@ -317,7 +317,7 @@ export function HomePage() {
               </span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#010101] mb-4">
-              Our <span className="text-[#B62028]">Services</span>
+              Our <span className="text-[#B62028]">Facilities</span>
             </h2>
             <div className="w-16 h-1 bg-[#B62028] mx-auto mb-4"></div>
             <p className="text-[#666] max-w-2xl mx-auto">
@@ -331,6 +331,9 @@ export function HomePage() {
             <ServiceCard icon={<Activity className="w-6 h-6" />} title="Physiotherapy" description="Helping patients regain mobility and improve their quality of life with personalized plans." delay={0.2} />
             <ServiceCard icon={<Stethoscope className="w-6 h-6" />} title="GP Clinic" description="Primary healthcare services for individuals and families, diagnosing and treating various conditions." delay={0.3} />
             <ServiceCard icon={<Heart className="w-6 h-6" />} title="Wellness Clinic" description="Promoting holistic health through nutritional counselling, mental health support, and coaching." delay={0.4} />
+            <ServiceCard icon={<PersonStanding className="w-6 h-6" />} title="Paediatric Department" description='At Baines Intercare, we prioritize children’s health through our Paediatric Department.' delay={0.5} />
+            <ServiceCard icon={<HandPlatter className="w-6 h-6" />} title="VIP Lounge" description='Experience comfort and exclusivity in the VIP Lounge at Baines Intercare.' delay={0.5} />
+            <ServiceCard icon={<Coffee className="w-6 h-6" />} title="Coffee Shop" description='Visit our in-house Coffee Shop for a delightful selection of beverages and snacks.' delay={0.5} />
 
             {/* action card  */}
             <motion.div initial={{
@@ -386,8 +389,8 @@ export function HomePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <Link to="/services" className="inline-flex items-center text-[#B62028] font-bold hover:text-[#8a181e] transition-colors group border-b-2 border-[#B62028]/30 hover:border-[#B62028] pb-1">
-              View all services
+            <Link to="/facilities" className="inline-flex items-center text-[#B62028] font-bold hover:text-[#8a181e] transition-colors group border-b-2 border-[#B62028]/30 hover:border-[#B62028] pb-1">
+              View all Facilities
               <motion.span className="inline-block ml-2" animate={{
               x: [0, 5, 0]
             }} transition={{
