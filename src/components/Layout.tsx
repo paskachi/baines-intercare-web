@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 interface LayoutProps {
   children: React.ReactNode;
@@ -154,7 +154,7 @@ export function Layout({
       }} />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
               <h3 className="font-serif text-xl font-semibold mb-2 text-white">
                 Baines Intercare
@@ -214,7 +214,7 @@ export function Layout({
             }} className="w-12 h-1 bg-[#B62028] mb-4" />
               <ul className="space-y-3 text-sm text-[#a0a0a0]">
                 <li>
-                  <Link to="/services" className="hover:text-[#B62028] transition-colors">
+                  <Link to="/facilities" className="hover:text-[#B62028] transition-colors">
                     Our Services
                   </Link>
                 </li>
@@ -224,6 +224,35 @@ export function Layout({
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg font-semibold mb-2 text-white">
+                Follow Us
+              </h3>
+              <motion.div initial={{
+              scaleX: 0
+            }} whileInView={{
+              scaleX: 1
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.6,
+              delay: 0.3
+            }} className="w-12 h-1 bg-[#B62028] mb-4" />
+              <div className="flex space-x-4">
+                <a href="https://www.facebook.com/bainesintercare" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] hover:text-[#B62028] transition-colors">
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a href="https://x.com/bainesintercare" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] hover:text-[#B62028] transition-colors">
+                  <Twitter className="w-6 h-6" />
+                </a>
+                <a href="https://www.instagram.com/bainesintercaremedicalcenter" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] hover:text-[#B62028] transition-colors">
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com/company/baines-intercare" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] hover:text-[#B62028] transition-colors">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
             </div>
           </div>
           <div className="border-t border-[#333] pt-8 text-center text-xs text-[#666]">
